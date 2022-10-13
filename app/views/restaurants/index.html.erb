@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>List of Restaurants</h1>
+  <ol>
+    <% @restaurants.each do |restaurant| %>
+      <br>
+      <li style="font-weight: bold;"><%= restaurant.name %></li>
+      Address: <%= restaurant.address %>
+      <br>
+      Tel: <%= restaurant.phone_number %>
+      <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary"%>
+      <br>
+    <% end %>
+    <br>
+       <%= link_to "Create New Restaurant", new_restaurant_path, class: "btn btn-primary"%>
+  </ol>
+</div>

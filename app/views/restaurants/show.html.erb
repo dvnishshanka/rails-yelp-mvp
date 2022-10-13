@@ -1,0 +1,16 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+      <br>
+      <h5>Address: <%= @restaurant.address %></h5>
+      <br>
+      <h5>Tel: <%= @restaurant.phone_number %></h5>
+      <hr>
+      <h3>Reviews</h3>
+      <ol>
+      <li><h5><%= @restaurant %></h5></li>
+      <h5>Rating <%= @restaurant %></h5>
+      </ol>
+      <br>
+      <%= link_to "Go back to List", restaurants_path, class: "btn btn-primary"%>
+      <%= link_to "Add a review", restaurant_path(@restaurant), class: "btn btn-primary"%>
+</div>

@@ -5,12 +5,14 @@
       <br>
       <h5>Tel: <%= @restaurant.phone_number %></h5>
       <hr>
-      <h3>Reviews</h3>
-      <ol>
-      <li><h5><%= @restaurant %></h5></li>
-      <h5>Rating <%= @restaurant %></h5>
-      </ol>
+      <p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %></li>
+  <% end %>
+</ul>
+<br>
       <br>
       <%= link_to "Go back to List", restaurants_path, class: "btn btn-primary"%>
-      <%= link_to "Add a review", restaurant_path(@restaurant), class: "btn btn-primary"%>
+      <%= link_to "Add a review", new_restaurant_review_path(@restaurant), class: "btn btn-primary"%>
 </div>
